@@ -16,7 +16,7 @@ export const Movie = ({ id, title, poster_path, vote_average }) => {
     }
     return (
         <div className="movie">
-            <img src={image_path + poster_path} alt={title} />
+            {poster_path ? <img src={image_path + poster_path} alt={title} /> : null}
             <div className="movie-info">
                 <h3>{title}</h3>
                 <span className={`${getClass(vote_average)}`}>{vote_average}</span>
