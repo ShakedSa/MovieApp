@@ -13,6 +13,15 @@ export const Movies = () => {
         return <div className="loader"></div>
     }
     // else display the movies list.
+    if (movies.length === 0) {
+        return (
+            <main id="main">
+                <div className="section-title">
+                    empty result search
+                </div>
+            </main>
+        )
+    }
     return (
         <main id="main">
             {movies.map((movie) => <Movie {...movie} key={movie.id} />)}
